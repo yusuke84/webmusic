@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>SkyWay</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="https://skyway.io/dist/0.3/peer.js"></script>
+    <script type="text/javascript" src="js/WebMIDIAPI.js"></script>
+    <script type="text/javascript" src="js/nsx1.js"></script>
+    <script type="text/javascript" src="js/script2.js"></script>
+</head>
+
+<body>
+
+<div class="pure-g">
+
+    <!-- Video area -->
+    <div class="pure-u-2-3" id="video-container">
+        <video id="their-video" autoplay></video>
+        <video id="my-video" muted="true" autoplay></video>
+    </div>
+
+    <!-- Steps -->
+    <div class="pure-u-1-3">
+        <h2>ボカロとVoiceチャット</h2>
+
+        <!-- Get local audio/video stream -->
+        <div id="step1">
+            <p>カメラとマイクの利用を許可してください。</p>
+            <div id="step1-error">
+                <p>カメラまたはマイクにアクセスできません。ブラウザで利用が許可されているか確認して下さい。</p>
+                <a href="#" class="pure-button pure-button-error" id="step1-retry">メディアを再取得</a>
+            </div>
+        </div>
+
+        <!-- Make calls to others -->
+        <div id="step2">
+            <p>Your Peerid: <span id="my-id">...</span></p>
+            <h3>相手を呼び出す</h3>
+            <div class="pure-form">
+                <label for="contactlist">チャット可能なPeerID：</label>
+                <select id="contactlist" name="contact">
+                </select>
+                <a href="#" class="pure-button pure-button-success" id="make-call">Call</a>
+            </div>
+            <h3>接続されたMIDI機器</h3>
+            <p id="inputMidiList"></p>
+            <p id="outputMidiList"></p>
+        </div>
+
+        <!-- Call in progress -->
+        <div id="step3">
+            <p>メッセージ：<input type="text" id="textdata"><p><a href="#" class="pure-button pure-button-success" id="sendtext">送信</a></p></p>
+            <p>接続先：<span id="their-id">...</span></p>
+            <p><a href="#" class="pure-button pure-button-error" id="end-call">チャットを終了する</a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
