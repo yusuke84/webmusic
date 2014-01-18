@@ -1,12 +1,9 @@
 /**
  * Created by yusuke on 2014/01/18.
  */
-/**
- * Created by yusuke on 2013/12/20.
- */
 
 //APIキー
-var APIKEY = 'cde34d74-7eab-11e3-8dc7-d79150c8e494';
+var APIKEY = '3bebf2ea-6ac4-11e3-9bff-4b748ebf39fb';
 
 //ユーザーリスト
 var userList = [];
